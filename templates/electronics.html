@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronics | Electronics Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="topic-page">
+<nav class="navbar">
+    <div class="nav-brand"><div class="small-brand-icon">E</div><div><span class="brand-title">Electronics Assistant</span><span class="brand-subtitle">Learning made simple</span></div></div>
+    <div class="nav-actions"><a class="back-btn" href="{{ url_for('welcome') }}">← Home</a></div>
+</nav>
+<main class="topic-main">
+    <section class="topic-hero electronics-theme">
+        <div><span class="section-label">01 · ELECTRONICS</span><h1>Build your electronics foundation.</h1><p>Start with the electrical quantities and components that form the foundation of circuits, then move towards practical applications and projects.</p></div>
+        <div class="topic-hero-mark">01</div>
+    </section>
+    <section class="content-section"><div class="section-heading compact"><div><span class="section-label">FUNDAMENTALS</span><h2>Start with the essentials</h2></div></div>
+        <div class="info-grid">
+            <article class="info-card"><span>01</span><h3>Voltage</h3><p>Electrical potential difference between two points, measured in volts. It provides the potential that drives current through a circuit.</p></article>
+            <article class="info-card"><span>02</span><h3>Current</h3><p>The flow of electric charge through a circuit, measured in amperes. Conventional current flows from higher to lower potential.</p></article>
+            <article class="info-card"><span>03</span><h3>Resistance</h3><p>The opposition to current flow, measured in ohms. Resistors are used to limit current and set voltage levels.</p></article>
+            <article class="info-card"><span>04</span><h3>Ohm's Law</h3><p>The relationship between voltage, current and resistance. It is one of the first tools used to analyse simple circuits.</p></article>
+        </div>
+    </section>
+    <section class="content-section"><div class="section-heading compact"><div><span class="section-label">COMPONENTS</span><h2>Know the building blocks</h2></div></div>
+        <div class="pill-grid building-block-grid">
+            <button class="building-block" onclick="askBuildingBlock('Resistor', 'Explain a resistor, its working principle, types, color coding, important formulas, and practical applications. Start with a clear student-friendly explanation.')">Resistors</button>
+            <button class="building-block" onclick="askBuildingBlock('Capacitor', 'Explain a capacitor, how it stores energy, its types, charging and discharging behavior, important formulas, and practical applications. Start with a clear student-friendly explanation.')">Capacitors</button>
+            <button class="building-block" onclick="askBuildingBlock('Inductor', 'Explain an inductor, how it stores energy in a magnetic field, its behavior in DC and AC circuits, important formulas, and practical applications. Start with a clear student-friendly explanation.')">Inductors</button>
+            <button class="building-block" onclick="askBuildingBlock('Diode', 'Explain a diode, its working principle, forward and reverse bias, common types, important characteristics, and practical applications. Start with a clear student-friendly explanation.')">Diodes</button>
+            <button class="building-block" onclick="askBuildingBlock('LED', 'Explain an LED, how it works, polarity, current limiting, important characteristics, and practical applications. Include a simple practical example.')">LEDs</button>
+            <button class="building-block" onclick="askBuildingBlock('Transistor', 'Explain a transistor, its working principle, BJT and MOSFET basics, switching and amplification, and common practical applications. Start simply and then add deeper points.')">Transistors</button>
+            <button class="building-block" onclick="askBuildingBlock('Op-amp', 'Explain an operational amplifier, its ideal characteristics, basic configurations, important formulas, and practical applications. Start with the fundamentals.')">Op-amps</button>
+            <button class="building-block" onclick="askBuildingBlock('Sensor', 'Explain what an electronic sensor is, how sensors convert physical quantities into electrical signals, common sensor types, and practical applications.')">Sensors</button>
+            <button class="building-block" onclick="askBuildingBlock('Switch', 'Explain an electrical switch, how it controls a circuit, common types, normally open and normally closed contacts, and practical applications.')">Switches</button>
+            <button class="building-block" onclick="askBuildingBlock('Integrated Circuit', 'Explain what an integrated circuit is, how it is built at a high level, common IC categories, examples, and practical applications in electronics.')">Integrated Circuits</button>
+        </div>
+    </section>
+    <section class="content-section"><div class="section-heading compact"><div><span class="section-label">LEARNING AREAS</span><h2>What you can explore next</h2></div></div>
+        <div class="feature-grid"><article><h3>Analog Electronics</h3><p>Amplifiers, filters, diodes, transistors and continuous signals.</p></article><article><h3>Digital Electronics</h3><p>Logic gates, Boolean algebra, flip-flops, counters and digital systems.</p></article><article><h3>Signals &amp; Circuits</h3><p>AC/DC circuits, waveforms, frequency, basic network analysis and measurements.</p></article><article><h3>Practical Projects</h3><p>LED circuits, sensor alarms, power indicators, temperature monitors and simple automation.</p></article></div>
+    </section>
+    <section class="project-banner"><div><span class="section-label">PROJECT IDEAS</span><h2>Turn concepts into working circuits.</h2><p>Try an LED flasher, temperature monitor, light-controlled lamp, fire alarm or sensor-based alert system.</p></div><a href="{{ url_for('welcome') }}#learning-path" class="secondary-btn">More Topics →</a></section>
+</main>
+
+<!-- FLOATING CHATBOT BUTTON -->
+{% include '_chatbot.html' %}
+</body>
+</html>

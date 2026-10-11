@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome | Electronics Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+<div class="welcome-page">
+
+    <nav class="navbar">
+        <div class="nav-brand">
+            <div class="small-brand-icon">E</div>
+            <div>
+                <span class="brand-title">Electronics Assistant</span>
+                <span class="brand-subtitle">Learning made simple</span>
+            </div>
+        </div>
+        
+    </nav>
+
+    <main class="welcome-main">
+        <!-- Chatbot mode selector -->
+        <div class="chat-mode-selector" aria-label="Choose chatbot mode">
+            <div class="mode-selector-label">CHATBOT MODE</div>
+            <div class="mode-switch" role="group" aria-label="Chatbot mode">
+                <button type="button" id="basicModeBtn" class="mode-btn active" onclick="setChatMode('basic')">
+                    Basic
+                </button>
+                <button type="button" id="advancedModeBtn" class="mode-btn" onclick="setChatMode('advanced')">
+                    Advanced
+                </button>
+            </div>
+        </div>
+
+        <section class="hero-section">
+            <div class="welcome-text">
+                <span class="welcome-label">ELECTRONICS LEARNING ASSISTANT</span>
+                <h1>Learn. Build. Solve.</h1>
+                <p>
+                    Explore electronics, Arduino & IoT, and computer software
+                    through simple explanations, deep ECE concepts, practical projects, code debugging and hardware troubleshooting.
+                </p>
+
+                <div class="hero-actions">
+                    <button class="start-btn" onclick="openChat()">
+                        Ask the Assistant <span>→</span>
+                    </button>
+                    <a class="secondary-btn" href="#learning-path">Explore Topics</a>
+                </div>
+            </div>
+
+            <div class="welcome-visual" aria-hidden="true">
+                <div class="circuit-card">
+                    <div class="circuit-line line-one"></div>
+                    <div class="circuit-line line-two"></div>
+                    <div class="circuit-line line-three"></div>
+                    <div class="circuit-line line-four"></div>
+                    <div class="chip"><span>ECE</span></div>
+                    <div class="node node-one"></div>
+                    <div class="node node-two"></div>
+                    <div class="node node-three"></div>
+                    <div class="node node-four"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="quick-tools-section" aria-label="What you can do">
+            <div class="section-heading compact">
+                <div><span class="section-label">WHAT YOU CAN DO</span><h2>One place to learn and build</h2></div>
+                <p>Use the Assistant for quick answers or switch to a focused tool when you need to practise, debug or build.</p>
+            </div>
+            <div class="quick-tools-grid">
+                <a class="quick-tool" href="{{ url_for('learn') }}"><span>01</span><div><h3>Learn</h3><p>Start with basics and move into deeper ECE topics.</p></div><b>→</b></a>
+                <a class="quick-tool" href="{{ url_for('projects') }}"><span>02</span><div><h3>Build Projects</h3><p>Find practical ideas and get step-by-step guidance.</p></div><b>→</b></a>
+                <a class="quick-tool" href="{{ url_for('troubleshoot') }}"><span>03</span><div><h3>Fix Problems</h3><p>Debug code and work through hardware issues.</p></div><b>→</b></a>
+                <a class="quick-tool" href="{{ url_for('calculator') }}"><span>04</span><div><h3>Solve</h3><p>Work through common electronics and ECE calculations.</p></div><b>→</b></a>
+            </div>
+        </section>
+
+        <section class="learning-section" id="learning-path">
+            <div class="section-heading">
+                <div>
+                    <span class="section-label">LEARNING PATH</span>
+                    <h2>Choose what you want to explore</h2>
+                </div>
+                <p>Start with the fundamentals and move towards practical projects.</p>
+            </div>
+
+            <div class="topic-grid">
+                <a class="topic-card" href="{{ url_for('electronics') }}">
+                    <div class="topic-icon electronics-icon">
+                        <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="12" y="12" width="24" height="24" rx="4"></rect><path d="M18 12V7M24 12V7M30 12V7M18 41v-5M24 41v-5M30 41v-5M12 18H7M12 24H7M12 30H7M41 18h-5M41 24h-5M41 30h-5"></path></svg>
+                    </div>
+                    <div class="topic-content">
+                        <span class="topic-number">01</span>
+                        <h3>Electronics</h3>
+                        <p>Understand voltage, current, components, circuits, signals and core electronics concepts.</p>
+                        <span class="topic-link">Explore Electronics <b>→</b></span>
+                    </div>
+                </a>
+
+                <a class="topic-card" href="{{ url_for('arduino_iot') }}">
+                    <div class="topic-icon iot-icon">
+                        <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="15" y="10" width="18" height="28" rx="3"></rect><path d="M20 6v4M28 6v4M20 38v4M28 38v4M11 18h4M11 25h4M33 18h4M33 25h4M21 19h6v6h-6z"></path><circle cx="24" cy="31" r="2"></circle></svg>
+                    </div>
+                    <div class="topic-content">
+                        <span class="topic-number">02</span>
+                        <h3>Arduino &amp; IoT</h3>
+                        <p>Learn microcontrollers, sensors, actuators, communication, Wi-Fi and connected projects.</p>
+                        <span class="topic-link">Explore Arduino &amp; IoT <b>→</b></span>
+                    </div>
+                </a>
+
+                <a class="topic-card" href="{{ url_for('computer_software') }}">
+                    <div class="topic-icon software-icon">
+                        <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="7" y="9" width="34" height="24" rx="3"></rect><path d="M17 40h14M24 33v7M16 19l4 4-4 4M23 27h7"></path></svg>
+                    </div>
+                    <div class="topic-content">
+                        <span class="topic-number">03</span>
+                        <h3>Computer Software</h3>
+                        <p>Build software fundamentals through operating systems, programming, web and development tools.</p>
+                        <span class="topic-link">Explore Software <b>→</b></span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="assistant-tools-section">
+            <div class="section-heading compact">
+                <div><span class="section-label">ASSISTANT TOOLS</span><h2>Go beyond questions</h2></div>
+                <p>Use focused tools for learning, building, debugging and solving ECE problems.</p>
+            </div>
+            <div class="feature-grid tool-grid">
+                <a class="tool-card" href="{{ url_for('learn') }}"><span class="tool-icon">01</span><h3>Learn Mode</h3><p>Move from beginner concepts to deeper ECE topics with structured explanations.</p><b>Open Learn Mode →</b></a>
+                <a class="tool-card" href="{{ url_for('projects') }}"><span class="tool-icon">02</span><h3>Projects</h3><p>Explore practical Electronics, Arduino & IoT, and software project ideas.</p><b>Explore Projects →</b></a>
+                <a class="tool-card" href="{{ url_for('troubleshoot') }}"><span class="tool-icon">03</span><h3>Troubleshooting Lab</h3><p>Debug code and work through common hardware and embedded-system problems.</p><b>Open Troubleshooting →</b></a>
+                <a class="tool-card" href="{{ url_for('calculator') }}"><span class="tool-icon">04</span><h3>ECE Calculator</h3><p>Quickly solve common electronics and engineering calculations.</p><b>Open Calculator →</b></a>
+            </div>
+        </section>
+    </main>
+
+    {% include '_chatbot.html' %}
+</body>
+</html>

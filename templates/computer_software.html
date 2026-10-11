@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Computer Software | Electronics Assistant</title><link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"></head>
+<body class="topic-page">
+<nav class="navbar"><div class="nav-brand"><div class="small-brand-icon">E</div><div><span class="brand-title">Electronics Assistant</span><span class="brand-subtitle">Learning made simple</span></div></div><div class="nav-actions"><a class="back-btn" href="{{ url_for('welcome') }}">← Home</a></div></nav>
+<main class="topic-main">
+<section class="topic-hero software-theme"><div><span class="section-label">03 · COMPUTER SOFTWARE</span><h1>Understand software and build with it.</h1><p>Learn computer fundamentals, operating systems, programming, web technologies and the tools used to create software projects.</p></div><div class="topic-hero-mark">03</div></section>
+<section class="content-section"><div class="section-heading compact"><div><span class="section-label">FOUNDATION</span><h2>Computer software essentials</h2></div></div><div class="info-grid">
+<article class="info-card"><span>01</span><h3>Hardware vs Software</h3><p>Hardware is the physical system; software is the set of instructions and programs that make the system useful.</p></article>
+<article class="info-card"><span>02</span><h3>Operating Systems</h3><p>Operating systems such as Windows and Linux manage hardware resources and provide services for applications.</p></article>
+<article class="info-card"><span>03</span><h3>CPU &amp; RAM</h3><p>The CPU executes instructions while RAM provides fast temporary working space for active programs and data.</p></article>
+<article class="info-card"><span>04</span><h3>Files &amp; Applications</h3><p>Learn how programs, files, folders, storage and system utilities work together in a computer environment.</p></article>
+</div></section>
+<section class="content-section"><div class="section-heading compact"><div><span class="section-label">DEVELOPMENT</span><h2>Skills you can build</h2></div></div><div class="pill-grid"><span>C Programming</span><span>Python</span><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Git &amp; GitHub</span><span>MATLAB</span><span>OCTAVE</span><span>Web Development</span><span>Problem Solving</span></div></section>
+<section class="content-section"><div class="section-heading compact"><div><span class="section-label">PROJECT PATH</span><h2>Move from basics to projects</h2></div></div><div class="feature-grid"><article><h3>Programming</h3><p>Variables, conditions, loops, functions, arrays, files and object-oriented concepts.</p></article><article><h3>Web Development</h3><p>Create responsive pages using HTML, CSS and JavaScript, then connect them to a backend.</p></article><article><h3>Python &amp; Automation</h3><p>Build small utilities, data tools, automation scripts and backend applications.</p></article><article><h3>Version Control</h3><p>Use Git and GitHub to track code, collaborate and maintain project versions.</p></article></div></section>
+<section class="project-banner"><div><span class="section-label">PROJECT IDEAS</span><h2>Start building useful software.</h2><p>Try a portfolio website, resistor colour-code tool, quiz application, calculator, IoT dashboard or Flask application.</p></div><a href="{{ url_for('welcome') }}#learning-path" class="secondary-btn">More Topics →</a></section>
+</main>
+
+<!-- FLOATING CHATBOT BUTTON -->
+{% include '_chatbot.html' %}
+</body>
+</html>

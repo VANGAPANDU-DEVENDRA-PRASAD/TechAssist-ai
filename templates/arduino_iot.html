@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Arduino & IoT | Electronics Assistant</title><link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"></head>
+<body class="topic-page">
+<nav class="navbar"><div class="nav-brand"><div class="small-brand-icon">E</div><div><span class="brand-title">Electronics Assistant</span><span class="brand-subtitle">Learning made simple</span></div></div><div class="nav-actions"><a class="back-btn" href="{{ url_for('welcome') }}">← Home</a></div></nav>
+<main class="topic-main">
+<section class="topic-hero iot-theme"><div><span class="section-label">02 · ARDUINO &amp; IoT</span><h1>From a microcontroller to connected systems.</h1><p>Learn how boards, sensors, actuators and communication technologies come together to create useful embedded and IoT projects.</p></div><div class="topic-hero-mark">02</div></section>
+<section class="content-section"><div class="section-heading compact"><div><span class="section-label">ARDUINO BASICS</span><h2>Learn the board first</h2></div></div><div class="info-grid">
+<article class="info-card"><span>01</span><h3>What is Arduino?</h3><p>An open-source electronics platform built around microcontroller boards and an easy development environment.</p></article>
+<article class="info-card"><span>02</span><h3>Digital I/O</h3><p>Use digital pins to read switches and sensors or control LEDs, relays and other digital devices.</p></article>
+<article class="info-card"><span>03</span><h3>Analog &amp; PWM</h3><p>Read varying sensor values and generate useful output levels using analog inputs and PWM-capable pins.</p></article>
+<article class="info-card"><span>04</span><h3>Arduino IDE</h3><p>Write, compile and upload sketches while selecting the correct board and port for your hardware.</p></article>
+</div></section>
+<section class="content-section"><div class="section-heading compact"><div><span class="section-label">HARDWARE</span><h2>Common components</h2></div></div><div class="pill-grid"><span>Arduino UNO</span><span>Arduino UNO R4 WiFi</span><span>ESP32</span><span>LEDs</span><span>Push Buttons</span><span>Temperature Sensors</span><span>Ultrasonic Sensors</span><span>Servo Motors</span><span>Relays</span><span>Displays</span></div></section>
+<section class="content-section"><div class="section-heading compact"><div><span class="section-label">IoT FUNDAMENTALS</span><h2>Connect devices to the world</h2></div></div><div class="feature-grid"><article><h3>Connectivity</h3><p>Wi-Fi, Bluetooth and other communication methods allow devices to exchange data.</p></article><article><h3>Sensors &amp; Actuators</h3><p>Sensors collect information while actuators perform physical actions based on decisions.</p></article><article><h3>MQTT</h3><p>A lightweight publish-subscribe messaging protocol widely used for IoT communication.</p></article><article><h3>Cloud &amp; APIs</h3><p>Send device data to services, dashboards or APIs for monitoring and automation.</p></article></div></section>
+<section class="project-banner"><div><span class="section-label">PROJECT IDEAS</span><h2>Build practical connected projects.</h2><p>Try smart parking, fire and smoke alerts, temperature monitoring, home automation or sensor dashboards.</p></div><a href="{{ url_for('welcome') }}#learning-path" class="secondary-btn">More Topics →</a></section>
+</main>
+
+<!-- FLOATING CHATBOT BUTTON -->
+{% include '_chatbot.html' %}
+</body>
+</html>

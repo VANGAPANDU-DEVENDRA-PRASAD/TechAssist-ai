@@ -1,0 +1,11 @@
+{
+  "projects": [
+    {"id":"P001","category":"Electronics","level":"Beginner","name":"Automatic Night Lamp","objective":"Turn an LED on automatically when ambient light falls.","components":["LDR","LED","Resistor","Transistor or Arduino"],"skills":["Voltage divider","Sensor reading","Switching"]},
+    {"id":"P002","category":"Electronics","level":"Intermediate","name":"Fire and Smoke Alert","objective":"Detect fire/smoke conditions and generate a local or remote alert.","components":["Flame sensor","Smoke sensor","Buzzer","Arduino UNO R4 WiFi"],"skills":["Sensors","Thresholds","IoT alerts"]},
+    {"id":"P003","category":"Arduino & IoT","level":"Beginner","name":"Smart Temperature Monitor","objective":"Read temperature and display or transmit the measurement.","components":["Temperature sensor","Arduino","Display or Wi-Fi"],"skills":["Analog input","Sensor calibration","Data display"]},
+    {"id":"P004","category":"Arduino & IoT","level":"Intermediate","name":"Smart Parking System","objective":"Detect parking occupancy and indicate available spaces.","components":["Ultrasonic sensors","Arduino","Servo","LEDs"],"skills":["Distance measurement","Servo control","State logic"]},
+    {"id":"P005","category":"Computer Software","level":"Beginner","name":"Resistor Colour Code Tool","objective":"Convert resistor colour bands into resistance values.","components":["HTML","CSS","JavaScript"],"skills":["Frontend logic","Input validation","UI design"]},
+    {"id":"P006","category":"Computer Software","level":"Intermediate","name":"ECE Quiz Platform","objective":"Create topic-wise quizzes with scoring and explanations.","components":["Python/Flask","JSON","JavaScript"],"skills":["APIs","JSON data","Frontend-backend integration"]},
+    {"id":"P007","category":"Computer Software","level":"Advanced","name":"IoT Monitoring Dashboard","objective":"Display sensor readings received from an embedded device.","components":["ESP32/Arduino","Flask","JavaScript","API"],"skills":["REST APIs","Data visualization","IoT architecture"]}
+  ]
+}

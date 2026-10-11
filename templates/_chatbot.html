@@ -1,0 +1,70 @@
+<button class="chat-launcher" id="chatLauncher" onclick="openChat()" aria-label="Open Electronics Assistant">
+    <span class="chat-launcher-icon">✦</span>
+    <span class="chat-launcher-text">Assistant</span>
+</button>
+
+<section class="chat-section" id="chatSection" aria-label="Electronics Assistant">
+    <div class="chat-header">
+        <div class="chat-brand">
+            <div class="chat-brand-icon">E</div>
+            <div>
+                <h2>Electronics Assistant</h2>
+                <p id="chatModeStatus">Basic mode · Knowledge-base assistant</p>
+            </div>
+        </div>
+        <div class="chat-controls">
+            <button onclick="newChat()" class="chat-control" title="New chat" aria-label="New chat">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+            </button>
+            <button onclick="clearCurrentChat()" class="chat-control" title="Clear current chat" aria-label="Clear current chat">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M7 7l1 13h8l1-13M10 11v5M14 11v5"></path></svg>
+            </button>
+            <button onclick="clearAllChatHistory()" class="chat-control danger-control" title="Clear all chat history" aria-label="Clear all chat history">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M9 7V4h6v3M7 7l1 13h8l1-13"></path><path d="M10 11l4 4M14 11l-4 4"></path></svg>
+            </button>
+            <button onclick="minimizeChat()" class="chat-control" title="Minimize" aria-label="Minimize">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path></svg>
+            </button>
+            <button onclick="maximizeChat()" class="chat-control" title="Maximize" aria-label="Maximize">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5H5v3M16 5h3v3M8 19H5v-3M19 16v3h-3"></path></svg>
+            </button>
+            <button onclick="closeChat()" class="chat-control close-control" title="Close" aria-label="Close">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+            </button>
+        </div>
+    </div>
+
+    <div class="chat-mode-selector inline-mode">
+        <div class="mode-selector-label">MODE</div>
+        <div class="mode-switch">
+            <button type="button" id="basicModeBtn" class="mode-btn active" onclick="setChatMode('basic')">Basic</button>
+            <button type="button" id="advancedModeBtn" class="mode-btn" onclick="setChatMode('advanced')">Advanced</button>
+        </div>
+    </div>
+
+    <div class="chat-messages" id="chatMessages">
+        <div class="chat-empty-state">
+            <div class="empty-state-title">How can I help you today?</div>
+            <p>Ask about a concept, solve an ECE problem, debug code, or troubleshoot a project.</p>
+            <div class="empty-state-hints">
+                <button onclick="askSuggestion('Explain Ohm’s law with a simple example.')">Learn a concept</button>
+                <button onclick="askSuggestion('Give me a beginner electronics project idea.')">Find a project</button>
+                <button onclick="askSuggestion('Help me debug my code.')">Debug code</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-input-area">
+        <div class="chat-quick-actions">
+            <button onclick="askSuggestion('Explain this concept like I am a beginner.')">Learn</button>
+            <button onclick="askSuggestion('Give me a practical project idea related to this topic.')">Project</button>
+            <button onclick="askSuggestion('Give me a practice question on this topic.')">Practice</button>
+            <button onclick="askSuggestion('Help me debug my code. Ask for the language, code and error message.')">Debug</button>
+        </div>
+        <div class="chat-compose">
+            <input type="text" id="chatInput" placeholder="Ask a question..." onkeydown="handleEnter(event)">
+            <button onclick="sendMessage()" aria-label="Send message">→</button>
+        </div>
+    </div>
+</section>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
