@@ -3,9 +3,12 @@ import os
 import re
 from pathlib import Path
 
+BASE_DIR = Path(__file__).resolve().parent
+
 try:
     from dotenv import load_dotenv
-    load_dotenv()
+    # Load the project's .env even when start.bat / Flask is launched from another folder.
+    load_dotenv(dotenv_path=BASE_DIR / ".env", override=False)
 except ImportError:
     pass
 
@@ -14,7 +17,6 @@ try:
 except ImportError:
     Groq = None
 
-BASE_DIR = Path(__file__).resolve().parent
 KNOWLEDGE_PATH = BASE_DIR / "data" / "knowledge_base.json"
 PROJECTS_PATH = BASE_DIR / "data" / "projects.json"
 
@@ -98,13 +100,24 @@ def normalize(text):
 
 
 def tokenize(text):
-    return set(re.findall(r"[a-z0-9+#.]+", normalize(text)))
+    # Ignore common question words so queries such as "what is NumPy?" do not
+    # accidentally match every knowledge entry containing words like "is".
+    stop_words = {"what", "is", "are", "the", "a", "an", "of", "in", "on", "for", "to", "and", "how", "does", "do", " explain", "define"}
+    return {token for token in re.findall(r"[a-z0-9+#.]+", normalize(text)) if token not in stop_words}
 
 
 def search_knowledge(query, limit=4):
     data = load_knowledge()
     q = normalize(query)
     q_tokens = tokenize(query)
+
+    # If the user asks a stored question verbatim (with or without punctuation),
+    # return that entry alone instead of adding loosely related concepts.
+    exact_matches = [item for item in data.get("knowledge", [])
+                     if normalize(item.get("question", "")) == q]
+    if exact_matches:
+        return exact_matches[:1]
+
     scored = []
     for item in data.get("knowledge", []):
         haystack = normalize(" ".join([
